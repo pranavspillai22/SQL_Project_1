@@ -46,7 +46,7 @@ AND price = (SELECT MAX(price) FROM menu_items WHERE category = 'Italian');
 
 SELECT
 	category,
-    COUNT(item_name) AS total_items
+    	COUNT(item_name) AS total_items
 FROM menu_items
 GROUP BY category;
 
@@ -54,7 +54,7 @@ GROUP BY category;
 
 SELECT
 	category,
-    AVG(price) AS average_dish_price
+    	AVG(price) AS average_dish_price
 FROM menu_items
 GROUP BY category;
 
@@ -69,7 +69,7 @@ FROM order_details;
 
 SELECT
 	MIN(order_date),
-    MAX(order_date)
+    	MAX(order_date)
 FROM order_details;
 
 -- How many orders were made within this date range
@@ -88,7 +88,7 @@ FROM order_details;
 
 SELECT
 	order_id,
-    COUNT(item_id) AS num_items
+    	COUNT(item_id) AS num_items
 FROM order_details
 GROUP BY order_id
 ORDER BY num_items DESC;
@@ -99,7 +99,7 @@ SELECT COUNT(*)
 FROM
 (SELECT
 	order_id,
-    COUNT(item_id) AS num_items
+    	COUNT(item_id) AS num_items
 FROM order_details
 GROUP BY order_id
 HAVING COUNT(item_id) > 12) AS num_orders;
@@ -117,31 +117,31 @@ ON m.menu_item_id = o.item_id;
 
 SELECT
 	m.item_name,
-    m.category,
+    	m.category,
 	COUNT(o.item_id)
 FROM menu_items m
 LEFT JOIN order_details o
 ON m.menu_item_id = o.item_id
 GROUP BY m.item_name,
-		 m.category
+	 m.category
 ORDER BY COUNT(o.item_id);
 
 SELECT
 	m.item_name,
-    m.category,
+    	m.category,
 	COUNT(o.item_id)
 FROM menu_items m
 LEFT JOIN order_details o
 ON m.menu_item_id = o.item_id
 GROUP BY m.item_name,
-		 m.category
+	 m.category
 ORDER BY COUNT(o.item_id) DESC;
 
 -- What were the top 5 orders that spent the most money
 
 SELECT
 	o.order_id,
-    SUM(m.price) AS total_price
+    	SUM(m.price) AS total_price
 FROM menu_items m
 LEFT JOIN order_details o
 ON m.menu_item_id = o.item_id
@@ -153,7 +153,7 @@ LIMIT 5;
 
 SELECT
 	m.category,
-    COUNT(o.item_id)
+    	COUNT(o.item_id)
 FROM menu_items m
 LEFT JOIN order_details o
 ON m.menu_item_id = o.item_id
@@ -165,10 +165,10 @@ GROUP BY m.category;
 SELECT
 	o.order_id,
 	m.category,
-    COUNT(o.item_id)
+    	COUNT(o.item_id)
 FROM menu_items m
 LEFT JOIN order_details o
 ON m.menu_item_id = o.item_id
 WHERE o.order_id IN (440,2075,1957,330,2675)
 GROUP BY o.order_id,
-		 m.category;
+	 m.category;
