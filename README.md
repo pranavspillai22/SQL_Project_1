@@ -6,9 +6,10 @@
 •	Tasked with assessing the performance of a new menu introduced at the beginning of the year, demonstrating analytical skills to evaluate business objectives.
 
 •	Objectives:
-	Utilized expert data modeling skills, including conceptual, logical, and physical model design, to explore the menu_items table and understand the items featured on the new menu.
+    
+    Utilized expert data modeling skills, including conceptual, logical, and physical model design, to explore the menu_items table and understand the items featured on the new menu.
 
-	Leveraged SQL proficiency to explore the order_details table and conduct in-depth analysis of collected data.
+    Leveraged SQL proficiency to explore the order_details table and conduct in-depth analysis of collected data.
 
 •	Aimed to determine customer preferences and identify the popularity of menu items, showcasing expertise in data analysis and interpretation.
 
